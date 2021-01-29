@@ -17,13 +17,25 @@ public class DogMovementController : MonoBehaviour {
 
     private void Awake() {
         _characterController = GetComponent<CharacterController>();
+
+        // TODO put this someplace that makes more sense, like when clicking a start game button
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     private void Update() {
         var move = _actions.Player.Move.ReadValue<Vector2>();
         var button = _actions.Player.Fire.ReadValue<float>();
-        Debug.Log(button);
-        _characterController.SimpleMove(10f * (Vector3.forward * move.y + Vector3.right * move.x));
+        var camera = Camera.main;
+
+        var forward = camera.transform.forward;
+        var right = camera.transform.right;
+
+        forward.y = 0f;
+        right.y = 0f;
+        forward.Normalize();
+        right.Normalize();
+        _characterController.SimpleMove(10f * (forward * move.y + right * move.x));
     }
 
 }

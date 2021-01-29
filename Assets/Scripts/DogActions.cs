@@ -31,7 +31,7 @@ public class @DogActions : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""13f54d44-ed3c-473e-ad96-8597828b2a69"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""InvertVector2"",
                     ""interactions"": """"
                 },
                 {
