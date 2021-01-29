@@ -19,13 +19,19 @@ public class Sniff : MonoBehaviour
     [SerializeField]
     Transform player;
 
+    [Tooltip("Particles to play when digging")]
+    [SerializeField]
+    GameObject digParticles;
+
+    float digCooldown = 0;
+
     //Used to fade in and out the sniffing effect
     float PPWeight = 0.0f;
 
     //All smellables inside range
     List<Collider> withinRange = new List<Collider>();
 
-    SphereCollider smellRange;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +43,9 @@ public class Sniff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(digCooldown >= 0)
+          digCooldown -= Time.deltaTime;
+        
         if (isSniffing && PPWeight < 1)
         {
             PPWeight += .01f;
@@ -114,10 +123,17 @@ public class Sniff : MonoBehaviour
 
     public void dig()
     {
-        //Perform overlap sphere to find nearby dig spots
-        //Possibly give cooldown to dig?
+        
 
+        if (digCooldown > 0)
+            return;
+
+        digCooldown = 3f;
+
+        //Perform overlap sphere to find nearby dig spots
         Collider[] hits = Physics.OverlapSphere(player.position, digRange);
+        GameObject particles = Instantiate(digParticles, player.position, Quaternion.identity);
+        Destroy(particles, 4.0f);
 
         foreach(Collider c in hits)
         {

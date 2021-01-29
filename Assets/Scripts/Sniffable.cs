@@ -11,7 +11,10 @@ public class Sniffable : MonoBehaviour
     public GameObject[] trail;
 
     [Tooltip("Particles at the source of the trail")]
-    public GameObject source;
+    public GameObject sourceParticles;
+
+    [Tooltip("The small particles that \"preview\" the trail")]
+    public GameObject previewParticles;
 
     [Tooltip("Particles for destination this scent leads to")]
     public GameObject endpointParticles;
@@ -60,7 +63,8 @@ public class Sniffable : MonoBehaviour
     public void find()
     {
         hide();
-        source.SetActive(false);
+        sourceParticles.SetActive(false);
+        previewParticles.SetActive(false);
         found = true;
     }
 }
