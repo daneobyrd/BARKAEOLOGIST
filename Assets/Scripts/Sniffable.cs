@@ -7,27 +7,60 @@ using UnityEngine;
 public class Sniffable : MonoBehaviour
 {
     
-    [Tooltip("Breadcrumbs associate with this smell")]
-    public GameObject trail;
+    [Tooltip("Trail elements, in order, excluding the endpoint")]
+    public GameObject[] trail;
 
+    [Tooltip("Particles at the source of the trail")]
+    public GameObject source;
+
+    [Tooltip("Particles for destination this scent leads to")]
+    public GameObject endpointParticles;
+
+    GameObject penultimate;
+
+    bool found = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        trail.SetActive(false);
+        foreach(GameObject obj in trail)
+        {
+            obj.SetActive(false);
+        }
+
+        penultimate = trail[trail.Length - 1];
+
+        TrailPenultimate tp = penultimate.AddComponent(typeof(TrailPenultimate)) as TrailPenultimate;
+        tp.setEndpoint(endpointParticles);
+
     }
 
-    //show the breadcrumbs related to this sniffable
+    //Show the breadcrumbs related to this sniffable
     public void show()
     {
-        trail.SetActive(true);
+        if (found)
+            return;
+
+        foreach (GameObject obj in trail)
+        {
+            obj.SetActive(true);
+        }
     }
 
-    //hide the breadcrumbs related to this sniffable
+    //Hide the breadcrumbs related to this sniffable
     public void hide()
     {
-        trail.SetActive(false);
+        foreach (GameObject obj in trail)
+        {
+            obj.SetActive(false);
+        }
     }
 
-
+    //End of this trail was found, hide it
+    public void find()
+    {
+        hide();
+        source.SetActive(false);
+        found = true;
+    }
 }

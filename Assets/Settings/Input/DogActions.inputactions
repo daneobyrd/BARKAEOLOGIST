@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Dig",
+                    "type": "Button",
+                    "id": "7ae29c04-d92f-493c-8da2-5ccaeeb81eb5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -267,6 +275,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Sniff",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f26e8413-d514-4eab-8069-14d7242dc7fc",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Dig",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -49,6 +49,14 @@ public class @DogActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dig"",
+                    ""type"": ""Button"",
+                    ""id"": ""7ae29c04-d92f-493c-8da2-5ccaeeb81eb5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -280,6 +288,17 @@ public class @DogActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Sniff"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f26e8413-d514-4eab-8069-14d7242dc7fc"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Dig"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -861,6 +880,7 @@ public class @DogActions : IInputActionCollection, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_Sniff = m_Player.FindAction("Sniff", throwIfNotFound: true);
+        m_Player_Dig = m_Player.FindAction("Dig", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -926,6 +946,7 @@ public class @DogActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_Sniff;
+    private readonly InputAction m_Player_Dig;
     public struct PlayerActions
     {
         private @DogActions m_Wrapper;
@@ -934,6 +955,7 @@ public class @DogActions : IInputActionCollection, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @Sniff => m_Wrapper.m_Player_Sniff;
+        public InputAction @Dig => m_Wrapper.m_Player_Dig;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -955,6 +977,9 @@ public class @DogActions : IInputActionCollection, IDisposable
                 @Sniff.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSniff;
                 @Sniff.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSniff;
                 @Sniff.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSniff;
+                @Dig.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDig;
+                @Dig.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDig;
+                @Dig.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDig;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -971,6 +996,9 @@ public class @DogActions : IInputActionCollection, IDisposable
                 @Sniff.started += instance.OnSniff;
                 @Sniff.performed += instance.OnSniff;
                 @Sniff.canceled += instance.OnSniff;
+                @Dig.started += instance.OnDig;
+                @Dig.performed += instance.OnDig;
+                @Dig.canceled += instance.OnDig;
             }
         }
     }
@@ -1131,6 +1159,7 @@ public class @DogActions : IInputActionCollection, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnSniff(InputAction.CallbackContext context);
+        void OnDig(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

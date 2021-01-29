@@ -6,13 +6,18 @@ public class Sniff : MonoBehaviour
 {
     bool isSniffing;
 
-    [Tooltip("Camera for *SCENTS*")]
-    [SerializeField]
-    Camera smellCam;
+    Camera mainCam;
 
     [Tooltip("Postprocess volume active when sniffing")]
     [SerializeField]
     UnityEngine.Rendering.Volume volume;
+
+    [SerializeField]
+    float digRange = .3f;
+
+    [Tooltip("The actual player model")]
+    [SerializeField]
+    Transform player;
 
     //Used to fade in and out the sniffing effect
     float PPWeight = 0.0f;
@@ -25,6 +30,7 @@ public class Sniff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mainCam = Camera.main;
         isSniffing = false;
     }
 
@@ -33,23 +39,35 @@ public class Sniff : MonoBehaviour
     {
         if (isSniffing && PPWeight < 1)
         {
-            PPWeight += .02f;
+            PPWeight += .01f;
             volume.weight = PPWeight;
         }
         else if (!isSniffing && PPWeight > 0)
         {
-            PPWeight -= .02f;
+            PPWeight -= .01f;
             volume.weight = PPWeight;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Scents"))
+        {
+            TrailPenultimate tp = other.gameObject.GetComponent<TrailPenultimate>();
+            if (tp != null)
+            {
+                tp.discover();
+                return;
+            }
+        }
+
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Smellable") && !withinRange.Contains(other))
         {
             withinRange.Add(other);
-            setSniffableState(other, true);
+
+            if (isSniffing)
+              setSniffableState(other, true);
         }
     }
 
@@ -58,7 +76,7 @@ public class Sniff : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Smellable"))
         {
             withinRange.Remove(other);
-            setSniffableState(other, false);
+            //setSniffableState(other, false);
         }
     }
 
@@ -67,7 +85,8 @@ public class Sniff : MonoBehaviour
         isSniffing = !isSniffing;
         if (isSniffing)
         {
-            smellCam.gameObject.SetActive(true);
+            mainCam.cullingMask |= 1 << LayerMask.NameToLayer("Scents");
+            mainCam.cullingMask &= ~(1 << LayerMask.NameToLayer("ScentPreviews"));
             foreach (Collider collider in withinRange)
             {
                 setSniffableState(collider, true);
@@ -75,11 +94,8 @@ public class Sniff : MonoBehaviour
         }
         else
         {
-            smellCam.gameObject.SetActive(false);
-            foreach (Collider collider in withinRange)
-            {
-                setSniffableState(collider, false);
-            }
+            mainCam.cullingMask &= ~(1 << LayerMask.NameToLayer("Scents"));
+            mainCam.cullingMask |= 1 << LayerMask.NameToLayer("ScentPreviews");
         }
     }
 
@@ -94,6 +110,30 @@ public class Sniff : MonoBehaviour
             else
                 sniffable.hide();
         }
+    }
+
+    public void dig()
+    {
+        //Perform overlap sphere to find nearby dig spots
+        //Possibly give cooldown to dig?
+
+        Collider[] hits = Physics.OverlapSphere(player.position, digRange);
+
+        foreach(Collider c in hits)
+        {
+            TrailEnd end = c.GetComponent<TrailEnd>();
+            if (end != null)
+            {
+                end.discover();
+                break;
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(player.position, digRange);
     }
 }
     
