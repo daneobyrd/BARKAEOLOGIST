@@ -4,25 +4,43 @@ using UnityEngine;
 
 public class Sniff : MonoBehaviour
 {
-    Camera cam;
     bool isSniffing;
+
+    [Tooltip("Camera for *SCENTS*")]
+    [SerializeField]
+    Camera smellCam;
+
+    [Tooltip("Postprocess volume active when sniffing")]
+    [SerializeField]
+    UnityEngine.Rendering.Volume volume;
+
+    //Used to fade in and out the sniffing effect
+    float PPWeight = 0.0f;
+
     //All smellables inside range
     List<Collider> withinRange = new List<Collider>();
 
-    [Tooltip("Collider representing range of smelling")]
     SphereCollider smellRange;
 
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
         isSniffing = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("List size: " + withinRange.Count);
+        if (isSniffing && PPWeight < 1)
+        {
+            PPWeight += .02f;
+            volume.weight = PPWeight;
+        }
+        else if (!isSniffing && PPWeight > 0)
+        {
+            PPWeight -= .02f;
+            volume.weight = PPWeight;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,7 +48,6 @@ public class Sniff : MonoBehaviour
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Smellable") && !withinRange.Contains(other))
         {
-            
             withinRange.Add(other);
             setSniffableState(other, true);
         }
@@ -40,7 +57,6 @@ public class Sniff : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Smellable"))
         {
-            
             withinRange.Remove(other);
             setSniffableState(other, false);
         }
@@ -51,8 +67,7 @@ public class Sniff : MonoBehaviour
         isSniffing = !isSniffing;
         if (isSniffing)
         {
-            cam.cullingMask |= 1 << LayerMask.NameToLayer("Scents");
-
+            smellCam.gameObject.SetActive(true);
             foreach (Collider collider in withinRange)
             {
                 setSniffableState(collider, true);
@@ -60,8 +75,7 @@ public class Sniff : MonoBehaviour
         }
         else
         {
-            cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Scents"));
-
+            smellCam.gameObject.SetActive(false);
             foreach (Collider collider in withinRange)
             {
                 setSniffableState(collider, false);
