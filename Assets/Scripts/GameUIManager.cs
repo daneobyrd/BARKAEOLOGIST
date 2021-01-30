@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,8 +18,7 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     }
 
     public void Unpawse() {
-        pawseMenu.SetActive(false);
-        Time.timeScale = 1;
+        StartCoroutine(ClosePawse());
     }
 
     public void Pawse() {
@@ -54,5 +54,12 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         else {
             Pawse();
         }
+    }
+
+    IEnumerator ClosePawse()
+    {
+        yield return new WaitForSeconds(0.3f);
+        pawseMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 }
