@@ -27,8 +27,11 @@ public class TextWriter : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float jitter;
 
-    private string toWrite;
+    private Queue<string> textQueue = new Queue<string>();
     private float currAlpha = 0.0f;
+
+    //prevent trying to print multiple messages at a time
+    private bool mutex;
 
     // Start is called before the first frame update
     void Start()
@@ -43,26 +46,33 @@ public class TextWriter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!mutex && textQueue.Count > 0)
+        {
+            StartCoroutine(Typewriter(textQueue.Dequeue()));
+        }
     }
 
-    public void writeText(string textToWrite)
+    //Add a string that will be eventually printed in the dialogue box
+    public void addTextToQueue(string textToWrite)
     {
-        StopAllCoroutines();
-        text.text = "";
+        textQueue.Enqueue(string.Copy(textToWrite)); 
+    }
 
-        toWrite = string.Copy(textToWrite);
-        StartCoroutine(Typewriter());
+    public void clearQueue()
+    {
+        textQueue.Clear();
     }
 
     public void testWriter()
     {
-        writeText("Omae wa mou shindeiru!    Nani????");
+        addTextToQueue("Omae wa mou shindeiru!    Nani????");
     }
 
-    IEnumerator Typewriter()
+    IEnumerator Typewriter(string toWrite)
     {
         //yield return StartCoroutine(FadeGUI(true, .6f, 0));
+
+        mutex = true;
 
         boxAnimator.SetTrigger("DialogueStart");
         yield return new WaitForSecondsRealtime(1f);
@@ -83,6 +93,7 @@ public class TextWriter : MonoBehaviour
         yield return new WaitForSecondsRealtime(.8f);
         text.text = "";
 
+        mutex = false;
     }
     IEnumerator FadeGUI(bool visible, float time, float initialDelay)
     {
