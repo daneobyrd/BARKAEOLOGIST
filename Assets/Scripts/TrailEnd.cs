@@ -15,7 +15,7 @@ public class TrailEnd : MonoBehaviour
     [Tooltip("Source of this scent trail")]
     public Sniffable source;
 
-    public int ID = 0;
+    private bool found = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,11 @@ public class TrailEnd : MonoBehaviour
 
     public void discover()
     {
+        if (found)
+            return;
+
+        found = true;
+        GameManager.instance().findBone();
         item.SetActive(true);
         particles.SetActive(false);
         source.find();

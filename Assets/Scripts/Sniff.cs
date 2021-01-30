@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Controls sniffing and digging
 public class Sniff : MonoBehaviour
 {
     bool isSniffing;
@@ -43,6 +44,7 @@ public class Sniff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(withinRange.Count);
         if(digCooldown >= 0)
           digCooldown -= Time.deltaTime;
         
