@@ -57,6 +57,14 @@ public class @DogActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pawse"",
+                    ""type"": ""Button"",
+                    ""id"": ""1dd3381d-2795-4dc5-8904-4edf71d81d42"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -299,6 +307,39 @@ public class @DogActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Dig"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4bf8a337-edbe-401f-b7f2-245f26995323"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pawse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad92363f-a88d-4173-8383-6c843b1faca7"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pawse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04f546f0-977b-4eab-95f6-c1f5b2e9735d"",
+                    ""path"": ""<Keyboard>/#(P)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pawse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -881,6 +922,7 @@ public class @DogActions : IInputActionCollection, IDisposable
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_Sniff = m_Player.FindAction("Sniff", throwIfNotFound: true);
         m_Player_Dig = m_Player.FindAction("Dig", throwIfNotFound: true);
+        m_Player_Pawse = m_Player.FindAction("Pawse", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -947,6 +989,7 @@ public class @DogActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_Sniff;
     private readonly InputAction m_Player_Dig;
+    private readonly InputAction m_Player_Pawse;
     public struct PlayerActions
     {
         private @DogActions m_Wrapper;
@@ -956,6 +999,7 @@ public class @DogActions : IInputActionCollection, IDisposable
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @Sniff => m_Wrapper.m_Player_Sniff;
         public InputAction @Dig => m_Wrapper.m_Player_Dig;
+        public InputAction @Pawse => m_Wrapper.m_Player_Pawse;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -980,6 +1024,9 @@ public class @DogActions : IInputActionCollection, IDisposable
                 @Dig.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDig;
                 @Dig.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDig;
                 @Dig.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDig;
+                @Pawse.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPawse;
+                @Pawse.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPawse;
+                @Pawse.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPawse;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -999,6 +1046,9 @@ public class @DogActions : IInputActionCollection, IDisposable
                 @Dig.started += instance.OnDig;
                 @Dig.performed += instance.OnDig;
                 @Dig.canceled += instance.OnDig;
+                @Pawse.started += instance.OnPawse;
+                @Pawse.performed += instance.OnPawse;
+                @Pawse.canceled += instance.OnPawse;
             }
         }
     }
@@ -1160,6 +1210,7 @@ public class @DogActions : IInputActionCollection, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnSniff(InputAction.CallbackContext context);
         void OnDig(InputAction.CallbackContext context);
+        void OnPawse(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
