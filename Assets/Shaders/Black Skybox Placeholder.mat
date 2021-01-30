@@ -20,9 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: test 1
-  m_Shader: {fileID: -6465566751694194690, guid: 8dc125f04e1b6d84f9e9c438a2a17d8b,
-    type: 3}
+  m_Name: Black Skybox Placeholder
+  m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -42,6 +41,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FogOfWar1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -70,6 +73,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - CLIP: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -82,12 +86,14 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _OutlineDepthSensitivity: 0.944
-    - _OutlineNormalsSensitivity: 0.664
-    - _OutlineThickness: 1.5
+    - _OutlineDepthNormalSensitivity: 0.58
+    - _OutlineDepthNormalThresholdScale: 0.3
+    - _OutlineDepthSensitivity: 0.75
+    - _OutlineNormalsSensitivity: 1
+    - _OutlineThickness: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 1
+    - _Smoothness: 0.581
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -96,10 +102,14 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainColor: {r: 0.8113208, g: 0.63489246, b: 0, a: 0}
+    - _KnownColor: {r: 0, g: 0, b: 0, a: 0}
+    - _MainColor: {r: 1, g: 0, b: 0, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _SightColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SpecularColor: {r: 0.34995243, g: 0.6886792, b: 0.3378426, a: 1}
+    - _SpecularColor: {r: 0, g: 0, b: 0, a: 1}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _UnknownColor: {r: 0, g: 0, b: 0, a: 0}
+    - _WorldScale: {r: 0, g: 0, b: 0, a: 0}
