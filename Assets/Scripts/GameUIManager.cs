@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     private DogActions _actions;
@@ -12,6 +13,13 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     // Miki's Edit
     public AudioMixerSnapshot paused;
     public AudioMixerSnapshot unpaused;
+
+    public AudioMixer audioMixer;
+
+    public Slider musicSlider;
+    public Slider sfxSlider;
+    public Slider ambienceSlider;
+  
     // Miki's Edit
 
     [SerializeField] private GameObject pawseMenu;
@@ -74,4 +82,24 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         // For Audio Mixer to switch snapshot - Miki
         unpaused.TransitionTo(0.5f);
     }
+
+
+    // Setting up sliders for audio
+
+
+    public void SetMusicVolume ()
+    {
+        audioMixer.SetFloat("MusicExpo", Mathf.Log(musicSlider.value)*20);
+    }
+
+    public void SetSFXVolume()
+    {
+        audioMixer.SetFloat("SFXExpo", Mathf.Log(sfxSlider.value)*20);
+    }
+
+    public void SetAmbienceVolume()
+    {
+        audioMixer.SetFloat("AmbiExpo", Mathf.Log(ambienceSlider.value)*20);
+    }
+
 }
