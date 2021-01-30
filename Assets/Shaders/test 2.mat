@@ -45,6 +45,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FogOfWar1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -70,6 +74,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - CLIP: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -82,6 +87,8 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
+    - _OutlineDepthNormalSensitivity: 0
+    - _OutlineDepthNormalThresholdScale: 0
     - _OutlineDepthSensitivity: 0.944
     - _OutlineNormalsSensitivity: 0.664
     - _OutlineThickness: 1.5
@@ -98,8 +105,12 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _KnownColor: {r: 0, g: 0, b: 0, a: 0.5019608}
     - _MainColor: {r: 0.8113208, g: 0.63489246, b: 0, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _SightColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 0.34995243, g: 0.6886792, b: 0.3378426, a: 1}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _UnknownColor: {r: 0, g: 0, b: 0, a: 1}
+    - _WorldScale: {r: 10, g: 10, b: 0, a: 0}

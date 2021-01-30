@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5091080939430031999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181026828250fe7499b69f0a9729ae48, type: 3}
+  m_Name: RenderPassOnTextureFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  textureName: OutlineMask
+  renderPassMaterial: {fileID: 2100000, guid: b4e1a2a7dcd4b0c40a626da8733c95a3, type: 2}
+  renderPassLayerMask:
+    serializedVersion: 2
+    m_Bits: 2065
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,7 +32,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RendererFeatures:
   - {fileID: 2124534182566707904}
-  m_RendererFeatureMap: c042103195dc7b1d
+  - {fileID: -5091080939430031999}
+  m_RendererFeatureMap: c042103195dc7b1d81cd82fadbd858b9
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   shaders:
     blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
