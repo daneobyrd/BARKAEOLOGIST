@@ -4,6 +4,11 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.HID;
 
 public class DogMovementController : MonoBehaviour {
+    [SerializeField]
+    private float baseMovementSpeed = 10f;
+    [SerializeField]
+    private float sniffSpeedMultiplier = 0.5f;
+
     private CharacterController _characterController;
     private DogActions _actions;
 
@@ -25,7 +30,7 @@ public class DogMovementController : MonoBehaviour {
 
     private void Update() {
         var move = _actions.Player.Move.ReadValue<Vector2>();
-        var button = _actions.Player.Fire.ReadValue<float>();
+        var sniff = _actions.Player.Sniff.ReadValue<float>();
         var camera = Camera.main;
 
         var forward = camera.transform.forward;
@@ -35,7 +40,9 @@ public class DogMovementController : MonoBehaviour {
         right.y = 0f;
         forward.Normalize();
         right.Normalize();
-        _characterController.SimpleMove(10f * (forward * move.y + right * move.x));
-    }
 
+        var speedMultiplier = sniff > 0.5f ? sniffSpeedMultiplier : 1f;
+        var speed = baseMovementSpeed * speedMultiplier;
+        _characterController.SimpleMove(speed * (forward * move.y + right * move.x));
+    }
 }
