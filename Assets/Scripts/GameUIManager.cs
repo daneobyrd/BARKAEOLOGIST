@@ -25,7 +25,6 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
 
     public void Unpawse() {
         StartCoroutine(ClosePawse());
-        
     }
 
     public void Pawse() {
@@ -71,20 +70,20 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     public void OnDig(InputAction.CallbackContext context) { }
 
     public void OnPawse(InputAction.CallbackContext context) {
-        if (pawseMenu.activeSelf) {
-            Unpawse();
-        }
-        else {
-            Pawse();
+        if (context.performed) {
+            if (pawseMenu.activeSelf) {
+                Unpawse();
+            }
+            else {
+                Pawse();
+            }
         }
     }
 
-    IEnumerator ClosePawse()
-    {
-        yield return new WaitForSeconds(0.3f);
-        pawseMenu.SetActive(false);
+    IEnumerator ClosePawse() {
+        yield return new WaitForSecondsRealtime(0.2f);
         Time.timeScale = 1;
+        pawseMenu.SetActive(false);
         unpaused.TransitionTo(0.1f);
-
     }
 }
