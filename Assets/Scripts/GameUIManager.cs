@@ -4,9 +4,15 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     private DogActions _actions;
+
+    // Miki's Edit
+    public AudioMixerSnapshot paused;
+    public AudioMixerSnapshot unpaused;
+    // Miki's Edit
 
     [SerializeField] private GameObject pawseMenu;
     [SerializeField] private GameObject winMenu;
@@ -19,11 +25,14 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
 
     public void Unpawse() {
         StartCoroutine(ClosePawse());
+        
     }
 
     public void Pawse() {
         pawseMenu.SetActive(true);
         Time.timeScale = 0;
+        // Miki
+        paused.TransitionTo(0.1f);
     }
 
     public void Quit() {
@@ -36,6 +45,20 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         winMenu.SetActive(true);
         Time.timeScale = 0;
     }
+
+    /* MIKI
+    public void Lowpass()
+    {
+        if (Time.timeScale == 0)
+        {
+            paused.TransitionTo(0.1f);
+        }
+        else
+        {
+            unpaused.TransitionTo(0.1f);
+        }
+    }
+    */ 
 
     public void OnMove(InputAction.CallbackContext context) { }
 
@@ -61,5 +84,7 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         yield return new WaitForSeconds(0.3f);
         pawseMenu.SetActive(false);
         Time.timeScale = 1;
+        unpaused.TransitionTo(0.1f);
+
     }
 }
