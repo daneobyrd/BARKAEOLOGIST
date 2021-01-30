@@ -10,7 +10,8 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 50ba780f7f4cd437bb0d322c0cee473e
   m_FloatValues:
-    b0ae561e929bb49feb889282ca90f1d9: -80
+    ef5aed6cc21684b7c9f13d8989499610: 700
+    b0ae561e929bb49feb889282ca90f1d9: -9.960263
     614332be5fa584bfeafec7004ecfeca6: -0.02577656
   m_TransitionOverrides: {}
 --- !u!244 &-3325328363450484215
@@ -56,6 +57,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -3325328363450484215}
+  - {fileID: 86495099027108863}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -76,7 +78,7 @@ AudioMixerController:
   m_StartSnapshot: {fileID: 1313127664664384459}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ExposedParameters: []
   m_AudioMixerGroupViews:
   - guids:
@@ -89,8 +91,8 @@ AudioMixerController:
     - 25ff2e14dc5ce4cb99024a53c3f56c4c
     - 07dcf8dbac8dd48288779b5c02df162e
     name: Menu Music
-  m_CurrentViewIndex: 1
-  m_TargetSnapshot: {fileID: -6863507377914758582}
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 1313127664664384459}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -139,6 +141,22 @@ AudioMixerSnapshotController:
   m_FloatValues:
     614332be5fa584bfeafec7004ecfeca6: -0.02577656
   m_TransitionOverrides: {}
+--- !u!244 &86495099027108863
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: dbf051816e24b4574ba1f56b55573091
+  m_EffectName: Lowpass Simple
+  m_MixLevel: 930ecd2e50c88400597f80c92402c0cf
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: ef5aed6cc21684b7c9f13d8989499610
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &1205772881026009240
 AudioMixerGroupController:
   m_ObjectHideFlags: 0

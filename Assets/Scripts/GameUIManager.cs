@@ -30,8 +30,8 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     public void Pawse() {
         pawseMenu.SetActive(true);
         Time.timeScale = 0;
-        // Miki
-        paused.TransitionTo(0.1f);
+        // For Audio Mixer to switch Snapshot - Miki
+        paused.TransitionTo(0.5f);
     }
 
     public void Quit() {
@@ -45,19 +45,6 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         Time.timeScale = 0;
     }
 
-    /* MIKI
-    public void Lowpass()
-    {
-        if (Time.timeScale == 0)
-        {
-            paused.TransitionTo(0.1f);
-        }
-        else
-        {
-            unpaused.TransitionTo(0.1f);
-        }
-    }
-    */ 
 
     public void OnMove(InputAction.CallbackContext context) { }
 
@@ -84,6 +71,7 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         yield return new WaitForSecondsRealtime(0.2f);
         Time.timeScale = 1;
         pawseMenu.SetActive(false);
-        unpaused.TransitionTo(0.1f);
+        // For Audio Mixer to switch snapshot - Miki
+        unpaused.TransitionTo(0.5f);
     }
 }
