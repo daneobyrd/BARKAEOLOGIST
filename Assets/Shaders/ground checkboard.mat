@@ -73,7 +73,7 @@ Material:
     - CLIP: 0
     - _DEBUG_VERTEX_COLOR: 0
     - _FourthTextureScale: 0
-    - _MainTextureScale: 0.2
+    - _MainTextureScale: 1
     - _NoiseScale: 0
     - _SecondTextureScale: 1
     - _ThirdTextureScale: 0
@@ -85,4 +85,4 @@ Material:
     - _SightColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnknownColor: {r: 0, g: 0, b: 0, a: 1}
     - _VertexColor_ChannelMixer: {r: 1, g: 1, b: 1, a: 0}
-    - _WorldScale: {r: 10, g: 10, b: 0, a: 0}
+    - _WorldScale: {r: 100, g: 100, b: 0, a: 0}

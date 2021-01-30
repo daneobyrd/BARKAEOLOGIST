@@ -23,7 +23,7 @@ Material:
   m_Name: alphafade test
   m_Shader: {fileID: -6465566751694194690, guid: 6cdf4a4f3f3dfe649bea8e08b807f221,
     type: 3}
-  m_ShaderKeywords: BOOLEAN_E68E2176_ON
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -86,7 +86,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - BOOLEAN_E68E2176: 1
+    - BOOLEAN_E68E2176: 0
     - CLIP: 0
     - _AlphaClip: 0
     - _Blend: 0
