@@ -36,6 +36,7 @@ public class Sniff : MonoBehaviour
     private DogActions _dogActions;
 
     public bool IsSniffing => isSniffing;
+    public bool CanDig => digCooldown <= 0f;
 
     // Start is called before the first frame update
     void Start() {

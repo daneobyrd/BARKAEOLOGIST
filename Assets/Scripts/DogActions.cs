@@ -65,6 +65,14 @@ public class @DogActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Bark"",
+                    ""type"": ""Button"",
+                    ""id"": ""75642e23-180f-44fd-aca3-d0a2f3e8d0e1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -296,6 +304,17 @@ public class @DogActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ba1d900-214b-4b79-a354-78daa31117ea"",
+                    ""path"": ""<Keyboard>/#(E)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Bark"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -879,6 +898,7 @@ public class @DogActions : IInputActionCollection, IDisposable
         m_Player_Dig = m_Player.FindAction("Dig", throwIfNotFound: true);
         m_Player_Pawse = m_Player.FindAction("Pawse", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_Bark = m_Player.FindAction("Bark", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -946,6 +966,7 @@ public class @DogActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Dig;
     private readonly InputAction m_Player_Pawse;
     private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_Bark;
     public struct PlayerActions
     {
         private @DogActions m_Wrapper;
@@ -956,6 +977,7 @@ public class @DogActions : IInputActionCollection, IDisposable
         public InputAction @Dig => m_Wrapper.m_Player_Dig;
         public InputAction @Pawse => m_Wrapper.m_Player_Pawse;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @Bark => m_Wrapper.m_Player_Bark;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -983,6 +1005,9 @@ public class @DogActions : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Bark.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBark;
+                @Bark.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBark;
+                @Bark.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBark;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1005,6 +1030,9 @@ public class @DogActions : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Bark.started += instance.OnBark;
+                @Bark.performed += instance.OnBark;
+                @Bark.canceled += instance.OnBark;
             }
         }
     }
@@ -1167,6 +1195,7 @@ public class @DogActions : IInputActionCollection, IDisposable
         void OnDig(InputAction.CallbackContext context);
         void OnPawse(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnBark(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
