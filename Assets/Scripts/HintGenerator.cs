@@ -42,6 +42,9 @@ public class HintGenerator : MonoBehaviour
 
     private void printMessage()
     {
+        if (!writer.ready())
+            return;
+
         if (state == State.normal)
         {
             writer.addTextToQueue(normalHints[Random.Range(0, normalHints.Length)]);

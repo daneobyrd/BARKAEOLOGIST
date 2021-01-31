@@ -68,6 +68,11 @@ public class TextWriter : MonoBehaviour
         addTextToQueue("Omae wa mou shindeiru!    Nani????");
     }
 
+    public bool ready()
+    {
+        return mutex;
+    }
+
     IEnumerator Typewriter(string toWrite)
     {
         //yield return StartCoroutine(FadeGUI(true, .6f, 0));
