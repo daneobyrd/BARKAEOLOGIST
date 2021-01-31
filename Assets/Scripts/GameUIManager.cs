@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     private DogActions _actions;
@@ -22,6 +23,15 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     public Slider masterSlider;
 
     // Miki's Edit
+
+    //Olivia's edit for BoneToggles
+    public GameObject skeletonPanel;
+
+    [SerializeField] public List<Toggle> boneToggles;
+
+    private int animatedBoneID;
+
+    //Olivia's edit for BoneToggles
 
     [SerializeField] private GameObject pawseMenu;
     [SerializeField] private GameObject winMenu;
@@ -41,6 +51,8 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         Time.timeScale = 0;
         // For Audio Mixer to switch Snapshot - Miki
         paused.TransitionTo(0.5f);
+        //set selected button for keyboard navigation
+        masterSlider.Select();
     }
 
     public void Quit() {
@@ -110,4 +122,19 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         audioMixer.SetFloat("AmbiExpo", Mathf.Log(ambienceSlider.value)*20);
     }
 
+    //bone Toggle handling
+    public void ToggleBone(int boneID)
+    {
+        animatedBoneID = boneID;
+        skeletonPanel.GetComponent<Animator>().SetBool("Show", true);
+        StartCoroutine(animateBonePanel());
+    }
+
+    IEnumerator animateBonePanel()
+    {
+        yield return new WaitForSecondsRealtime(1.1f);
+        boneToggles[animatedBoneID].GetComponent<Toggle>().isOn = true;
+        yield return new WaitForSecondsRealtime(1f);
+        skeletonPanel.GetComponent<Animator>().SetBool("Show", false);
+    }
 }

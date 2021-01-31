@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     public Canvas winScreen;
 
+    public GameUIManager uIManager;
+
     private static GameManager _INSTANCE;
 
     public static GameManager instance ()
@@ -39,7 +41,10 @@ public class GameManager : MonoBehaviour
     {
         writer.addTextToQueue(msg);
         if (isBone)
-          bonesFound++;
+        {
+            bonesFound++;
+            uIManager.ToggleBone(bonesFound - 1);
+        }
         
         if (bonesFound >= bones)
         {
