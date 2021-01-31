@@ -57,10 +57,10 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5147022883777029872}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1069351659290990096
 MonoBehaviour:
@@ -81,7 +81,6 @@ MonoBehaviour:
   starParticles: {fileID: 946122477031263032, guid: a581cf7fb388542ee809703672caf2f3,
     type: 3}
   message: I know a steakhouse with a great deal on ribs
-  foundSource: {fileID: 0}
 --- !u!54 &9182700669810737043
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,7 +126,7 @@ MonoBehaviour:
   trail: []
   sourceParticles: {fileID: 3529688152928165471}
   previewParticles: {fileID: 3057959179282752152}
-  endpointParticles: {fileID: 0}
+  endpointParticles: {fileID: 5025561042143077413}
 --- !u!1001 &572597826379945759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,6 +218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -5.94
+      objectReference: {fileID: 0}
+    - target: {fileID: -1586714682651872930, guid: c3d86ca929fd2524cad6c95244054941,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -9682106516001643, guid: c3d86ca929fd2524cad6c95244054941,
         type: 3}

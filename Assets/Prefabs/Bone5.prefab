@@ -24,10 +24,10 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709844765244732912}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6773529704682784016
 MonoBehaviour:
@@ -48,7 +48,6 @@ MonoBehaviour:
   starParticles: {fileID: 946122477031263032, guid: a581cf7fb388542ee809703672caf2f3,
     type: 3}
   message: Hopefully no one tries to eat my femur!
-  foundSource: {fileID: 0}
 --- !u!54 &3438763644582653075
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94,7 +93,7 @@ MonoBehaviour:
   trail: []
   sourceParticles: {fileID: 6930063904057789791}
   previewParticles: {fileID: 8838170645711040920}
-  endpointParticles: {fileID: 0}
+  endpointParticles: {fileID: 1542784069754287909}
 --- !u!1 &6652659373108584906
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +596,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: banana
+      objectReference: {fileID: 0}
+    - target: {fileID: -1586714682651872930, guid: c3d86ca929fd2524cad6c95244054941,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -9682106516001643, guid: c3d86ca929fd2524cad6c95244054941,
         type: 3}

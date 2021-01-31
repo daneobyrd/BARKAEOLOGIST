@@ -85,6 +85,8 @@ public class Sniff : MonoBehaviour
         {
             withinRange.Add(other);
 
+            Debug.Log("Adding object");
+
             if (isSniffing)
               setSniffableState(other, true);
         }
