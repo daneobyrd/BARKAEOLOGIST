@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: 881f18a4a992f4a9ba2014563f1ac69e
+guid: e53a6633208d441d7b372bf025c752dc
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -4140574477699340365
-    second: talking_spritesheetx.5_0
-  - first:
-      213: -5921826861551348349
-    second: talking_spritesheetx.5_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -46,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,53 +121,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: talking_spritesheetx.5_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 165
-        height: 207
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b7aea24379b986c0800000000000000
-      internalID: -4140574477699340365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: talking_spritesheetx.5_1
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 0
-        width: 165
-        height: 207
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3859dd738d171dda0800000000000000
-      internalID: -5921826861551348349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9c67d3178c20e4652bed36c5ade46bb5
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
