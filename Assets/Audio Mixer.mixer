@@ -10,8 +10,8 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 50ba780f7f4cd437bb0d322c0cee473e
   m_FloatValues:
-    ef5aed6cc21684b7c9f13d8989499610: 700
-    b0ae561e929bb49feb889282ca90f1d9: -9.960263
+    ef5aed6cc21684b7c9f13d8989499610: 500
+    b0ae561e929bb49feb889282ca90f1d9: -5.824182
     614332be5fa584bfeafec7004ecfeca6: -0.02577656
   m_TransitionOverrides: {}
 --- !u!244 &-3325328363450484215
@@ -79,7 +79,13 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 1
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 9f3ef9bda7f6e45d18fcd3fc03c638dc
+    name: AmbiExpo
+  - guid: b0ae561e929bb49feb889282ca90f1d9
+    name: MusicExpo
+  - guid: de2e5945d179141f2a0c8c86908e091b
+    name: SFXExpo
   m_AudioMixerGroupViews:
   - guids:
     - 25ff2e14dc5ce4cb99024a53c3f56c4c
