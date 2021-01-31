@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
         {
             //you win?
             winScreen.gameObject.SetActive(true);
+            uIManager.winButton.Select();
+            Time.timeScale = 0;
         }
     }
 }

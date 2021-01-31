@@ -24,14 +24,16 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
 
     // Miki's Edit
 
-    //Olivia's edit for BoneToggles
+    //Olivia's edit for BoneToggles and winscreen
     public GameObject skeletonPanel;
 
     [SerializeField] public List<Toggle> boneToggles;
 
     private int animatedBoneID;
 
-    //Olivia's edit for BoneToggles
+    [SerializeField] public Button winButton;
+
+    //Olivia's edit for BoneToggles and winscreen
 
     [SerializeField] private GameObject pawseMenu;
     [SerializeField] private GameObject winMenu;
