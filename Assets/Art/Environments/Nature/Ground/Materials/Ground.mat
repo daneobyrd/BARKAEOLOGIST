@@ -38,11 +38,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FourthTexture:
-        m_Texture: {fileID: 2800000, guid: cc80165a49574e043899fd7a3d9deea1, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: cc80165a49574e043899fd7a3d9deea1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7f5733575a1e837428cf66c9b5b8351e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTexture:
@@ -50,19 +50,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondTexture:
-        m_Texture: {fileID: 2800000, guid: cc80165a49574e043899fd7a3d9deea1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 95b13a39f922ad340ac2f1053d75ae5f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ThirdTexture:
-        m_Texture: {fileID: 2800000, guid: cc80165a49574e043899fd7a3d9deea1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8e5b112bed14e1244bda71d1c73f5981, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _DEBUG_VERTEX_COLOR: 0
-    - _FourthTextureScale: 0.2
+    - _FourthTextureScale: 0
     - _MainTextureScale: 0.2
     - _NoiseScale: 0.2
-    - _SecondTextureScale: 1
+    - _SecondTextureScale: 0.2
     - _ThirdTextureScale: 0.2
     m_Colors:
     - _KnownColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
