@@ -440,13 +440,17 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 2ffe27cade7284eedba78dd74031996c, type: 3}
   footstepClips:
     blackTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: eabeda3e9dc1843b8a17b0ca65900f6a, type: 3}
     redTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: eabeda3e9dc1843b8a17b0ca65900f6a, type: 3}
     greenTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: eabeda3e9dc1843b8a17b0ca65900f6a, type: 3}
     blueTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: eabeda3e9dc1843b8a17b0ca65900f6a, type: 3}
   jumpingClips:
     blackTerrainList:
       clips:
@@ -462,13 +466,17 @@ MonoBehaviour:
       - {fileID: 8300000, guid: 8ad8b9126e73e4c999d712e2b9eacbd9, type: 3}
   slowFootstepClips:
     blackTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: eabeda3e9dc1843b8a17b0ca65900f6a, type: 3}
     redTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: eabeda3e9dc1843b8a17b0ca65900f6a, type: 3}
     greenTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: eabeda3e9dc1843b8a17b0ca65900f6a, type: 3}
     blueTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: eabeda3e9dc1843b8a17b0ca65900f6a, type: 3}
 --- !u!114 &344651868102961183
 MonoBehaviour:
   m_ObjectHideFlags: 0
