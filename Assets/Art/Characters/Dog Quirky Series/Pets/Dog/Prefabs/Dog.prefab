@@ -76,7 +76,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -421,13 +421,23 @@ MonoBehaviour:
   pantingSource: {fileID: 992553153}
   footstepSource: {fileID: 1196009143}
   barkClips:
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: 6ae74cddadf734067a4e85906c4593bd, type: 3}
+    - {fileID: 8300000, guid: 932e0cc377be048cfab0268208083533, type: 3}
+    - {fileID: 8300000, guid: 4003026f3998d422ab66315495443113, type: 3}
+    - {fileID: 8300000, guid: 9d5575766e2784ea291c5816e3afa1f2, type: 3}
+    - {fileID: 8300000, guid: 07db3de7c7ce543d09bf8c7e9bd776f6, type: 3}
+    - {fileID: 8300000, guid: 22b61909b2bde4d5093026efc0af128a, type: 3}
   diggingClips:
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: 5f576da339edc417f93af614a7b82e0d, type: 3}
   sniffingClips:
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: 4fcb419e5f0054c879af824a3d85c441, type: 3}
+    - {fileID: 8300000, guid: ecb6f47bf306048879404b734c687a68, type: 3}
   pantingClips:
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: 2ffe27cade7284eedba78dd74031996c, type: 3}
   footstepClips:
     blackTerrainList:
       clips: []
@@ -439,13 +449,17 @@ MonoBehaviour:
       clips: []
   jumpingClips:
     blackTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: 8ad8b9126e73e4c999d712e2b9eacbd9, type: 3}
     redTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: 8ad8b9126e73e4c999d712e2b9eacbd9, type: 3}
     greenTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: 8ad8b9126e73e4c999d712e2b9eacbd9, type: 3}
     blueTerrainList:
-      clips: []
+      clips:
+      - {fileID: 8300000, guid: 8ad8b9126e73e4c999d712e2b9eacbd9, type: 3}
   slowFootstepClips:
     blackTerrainList:
       clips: []
@@ -934,7 +948,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
