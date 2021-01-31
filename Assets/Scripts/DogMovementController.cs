@@ -195,6 +195,9 @@ public class DogMovementController : MonoBehaviour {
 
         Mesh mesh = meshCollider.sharedMesh;
         Color[] colors = mesh.colors;
+        if (colors == null || colors.Length < 1) {
+            return TerrainColor.Black;
+        }
         int[] triangles = mesh.triangles;
 
         // Extract local space normals of the triangle we hit
