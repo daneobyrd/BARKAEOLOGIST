@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void findObject(bool isBone, string msg)
+    public void foundObject(bool isBone, string msg)
     {
         writer.addTextToQueue(msg);
         if (isBone)
