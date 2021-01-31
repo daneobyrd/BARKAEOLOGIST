@@ -76,6 +76,8 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
 
     public void OnJump(InputAction.CallbackContext context) { }
 
+    public void OnBark(InputAction.CallbackContext context) { }
+
     IEnumerator ClosePawse() {
         yield return new WaitForSecondsRealtime(0.2f);
         Time.timeScale = 1;
