@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 //Controls sniffing and digging
 public class Sniff : MonoBehaviour
@@ -32,11 +33,15 @@ public class Sniff : MonoBehaviour
     //All smellables inside range
     List<Collider> withinRange = new List<Collider>();
 
-    
+    private DogActions _dogActions;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+        _dogActions = new DogActions();
+        _dogActions.Player.Sniff.performed += sniff;
+        _dogActions.Player.Dig.performed += dig;
+        _dogActions.Player.Enable();
+
         mainCam = Camera.main;
         isSniffing = false;
     }
@@ -44,10 +49,10 @@ public class Sniff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(withinRange.Count);
+        // Debug.Log(withinRange.Count);
         if(digCooldown >= 0)
           digCooldown -= Time.deltaTime;
-        
+
         if (isSniffing && PPWeight < 1)
         {
             PPWeight += .01f;
@@ -91,7 +96,7 @@ public class Sniff : MonoBehaviour
         }
     }
 
-    public void sniff()
+    public void sniff(InputAction.CallbackContext callbackContext)
     {
         isSniffing = !isSniffing;
         if (isSniffing)
@@ -123,9 +128,9 @@ public class Sniff : MonoBehaviour
         }
     }
 
-    public void dig()
+    public void dig(InputAction.CallbackContext callbackContext)
     {
-        
+
 
         if (digCooldown > 0)
             return;
@@ -137,6 +142,7 @@ public class Sniff : MonoBehaviour
         GameObject particles = Instantiate(digParticles, player.position, Quaternion.identity);
         Destroy(particles, 4.0f);
 
+        Debug.Log(player.position);
         foreach(Collider c in hits)
         {
             TrailEnd end = c.GetComponent<TrailEnd>();
@@ -154,4 +160,4 @@ public class Sniff : MonoBehaviour
         Gizmos.DrawWireSphere(player.position, digRange);
     }
 }
-    
+
