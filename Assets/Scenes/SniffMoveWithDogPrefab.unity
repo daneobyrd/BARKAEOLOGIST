@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -34095,9 +34095,29 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 22b61909b2bde4d5093026efc0af128a, type: 3}
     - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
         type: 3}
+      propertyPath: diggingClips.clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: pantingClips.clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
       propertyPath: sniffingClips.clips.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: diggingClips.clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f576da339edc417f93af614a7b82e0d, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: pantingClips.clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ffe27cade7284eedba78dd74031996c, type: 3}
     - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
         type: 3}
       propertyPath: sniffingClips.clips.Array.data[0]
@@ -34108,6 +34128,46 @@ PrefabInstance:
       propertyPath: sniffingClips.clips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: ecb6f47bf306048879404b734c687a68, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: jumpingClips.redTerrainList.clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: jumpingClips.blueTerrainList.clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: jumpingClips.blackTerrainList.clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: jumpingClips.greenTerrainList.clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: jumpingClips.redTerrainList.clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ad8b9126e73e4c999d712e2b9eacbd9, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: jumpingClips.blueTerrainList.clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ad8b9126e73e4c999d712e2b9eacbd9, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: jumpingClips.blackTerrainList.clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ad8b9126e73e4c999d712e2b9eacbd9, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: jumpingClips.greenTerrainList.clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ad8b9126e73e4c999d712e2b9eacbd9, type: 3}
     - target: {fileID: 344651868102961183, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
         type: 3}
       propertyPath: volume
