@@ -60,6 +60,16 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         SceneManager.LoadScene(0);
     }
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     [ContextMenu("Force win")]
     public void WinGame() {
         winMenu.SetActive(true);
