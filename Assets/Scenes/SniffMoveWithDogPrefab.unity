@@ -34058,6 +34058,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog
       objectReference: {fileID: 0}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: barkClips.clips.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: barkClips.clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ae74cddadf734067a4e85906c4593bd, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: barkClips.clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 932e0cc377be048cfab0268208083533, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: barkClips.clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4003026f3998d422ab66315495443113, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: barkClips.clips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d5575766e2784ea291c5816e3afa1f2, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: barkClips.clips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 07db3de7c7ce543d09bf8c7e9bd776f6, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: barkClips.clips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 22b61909b2bde4d5093026efc0af128a, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: sniffingClips.clips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: sniffingClips.clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4fcb419e5f0054c879af824a3d85c441, type: 3}
+    - target: {fileID: 344651868102961182, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: sniffingClips.clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ecb6f47bf306048879404b734c687a68, type: 3}
     - target: {fileID: 344651868102961183, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
         type: 3}
       propertyPath: volume
@@ -34072,6 +34122,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 48763e1fa810741b38a6b2d665aefb6e, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811808085473119979, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8660727359046924555, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b25d9f8cc0bfb54793da6690755b9d9, type: 3}
