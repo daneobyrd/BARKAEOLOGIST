@@ -31,7 +31,7 @@ public class TextWriter : MonoBehaviour
     private float currAlpha = 0.0f;
 
     //prevent trying to print multiple messages at a time
-    private bool mutex;
+    private bool mutex = false;
 
     // Start is called before the first frame update
     void Start()

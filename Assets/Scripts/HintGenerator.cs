@@ -26,6 +26,8 @@ public class HintGenerator : MonoBehaviour
     {
         setNormal();
         interval = (minInterval + maxInterval) / 2;
+
+        writer.addTextToQueue("Hey Furball! In front and below you!");
     }
 
     // Update is called once per frame

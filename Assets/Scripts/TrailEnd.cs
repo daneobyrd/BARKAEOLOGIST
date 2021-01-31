@@ -35,14 +35,20 @@ public class TrailEnd : MonoBehaviour
         if (found)
             return;
 
-        if(displayStars)
-        {
-            StartCoroutine(digDelay());
-        }
+        Debug.Log("Found something!");
+
+
+       StartCoroutine(digDelay());
+        
 
         found = true;
         particles.SetActive(false);
-        source.find();
+
+        if(source != null)
+        {
+           source.find();
+        }
+        
     }
 
     IEnumerator digDelay()
