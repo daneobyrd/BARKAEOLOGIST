@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: base_material
+  m_Name: Pencil_Material
   m_Shader: {fileID: -6465566751694194690, guid: 8dc125f04e1b6d84f9e9c438a2a17d8b,
     type: 3}
   m_ShaderKeywords: 
@@ -60,8 +60,13 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ToonShading_36A3A5DF_Texture2DF3F3E642_2706298302:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - CLIP: 0
+    - LIGHTMAP: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -89,11 +94,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _BaseColor: {r: 0.89, g: 0.57493997, b: 0, a: 1}
+    - _Color: {r: 0.89, g: 0.57493997, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _KnownColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
+    - _MainColor: {r: 0.98225325, g: 0.6583875, b: 0.109461464, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SightColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -101,7 +106,7 @@ Material:
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _UnknownColor: {r: 0, g: 0, b: 0, a: 1}
     - _WorldScale: {r: 300, g: 300, b: 0, a: 0}
---- !u!114 &4827175266096877098
+--- !u!114 &6216749124617228056
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-642407769389191715
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 2
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -20,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Banana_Brown
+  m_Name: Phone_Material
   m_Shader: {fileID: -6465566751694194690, guid: 8dc125f04e1b6d84f9e9c438a2a17d8b,
     type: 3}
   m_ShaderKeywords: 
@@ -54,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7ff9d3be0c265c048aa6730dcb883741, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -70,11 +57,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
+        m_Texture: {fileID: 2800000, guid: e36390a881eecc342a2dc2fc5155670a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ToonShading_36A3A5DF_Texture2DF3F3E642_2706298302:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - CLIP: 0
+    - LIGHTMAP: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -102,11 +94,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.31399632, g: 0.13843426, b: 0.06124734, a: 1}
-    - _Color: {r: 0.31399632, g: 0.13843426, b: 0.06124734, a: 1}
+    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _KnownColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _MainColor: {r: 0.31399626, g: 0.1384342, b: 0.061247297, a: 1}
+    - _MainColor: {r: 0.57, g: 0.57, b: 0.57, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SightColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -114,3 +106,16 @@ Material:
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _UnknownColor: {r: 0, g: 0, b: 0, a: 1}
     - _WorldScale: {r: 300, g: 300, b: 0, a: 0}
+--- !u!114 &822374544837326166
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
