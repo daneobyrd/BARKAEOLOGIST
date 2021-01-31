@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7198845643060023872
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ground
+  m_Shader: {fileID: -6465566751694194690, guid: c54c3b6230765a9439363e1c3bb0a526,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _FogOfWar1:
+        m_Texture: {fileID: 8400000, guid: 34085cd2a9c5c854e8a48506b2558087, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FourthTexture:
+        m_Texture: {fileID: 2800000, guid: cc80165a49574e043899fd7a3d9deea1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: cc80165a49574e043899fd7a3d9deea1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTexture:
+        m_Texture: {fileID: 2800000, guid: ab4cacf4f2e5aa742916fbd384aaee81, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondTexture:
+        m_Texture: {fileID: 2800000, guid: cc80165a49574e043899fd7a3d9deea1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ThirdTexture:
+        m_Texture: {fileID: 2800000, guid: cc80165a49574e043899fd7a3d9deea1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _DEBUG_VERTEX_COLOR: 0
+    - _FourthTextureScale: 0.2
+    - _MainTextureScale: 0.2
+    - _NoiseScale: 0.2
+    - _SecondTextureScale: 1
+    - _ThirdTextureScale: 0.2
+    m_Colors:
+    - _KnownColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _UnknownColor: {r: 0, g: 0, b: 0, a: 1}
+    - _VertexColor_ChannelMixer: {r: 1, g: 1, b: 1, a: 0}
+    - _WorldScale: {r: 300, g: 300, b: 0, a: 0}

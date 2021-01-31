@@ -19,7 +19,7 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     public Slider musicSlider;
     public Slider sfxSlider;
     public Slider ambienceSlider;
-  
+
     // Miki's Edit
 
     [SerializeField] private GameObject pawseMenu;
@@ -58,8 +58,6 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
 
     public void OnLook(InputAction.CallbackContext context) { }
 
-    public void OnFire(InputAction.CallbackContext context) { }
-
     public void OnSniff(InputAction.CallbackContext context) { }
 
     public void OnDig(InputAction.CallbackContext context) { }
@@ -74,6 +72,8 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
             }
         }
     }
+
+    public void OnJump(InputAction.CallbackContext context) { }
 
     IEnumerator ClosePawse() {
         yield return new WaitForSecondsRealtime(0.2f);

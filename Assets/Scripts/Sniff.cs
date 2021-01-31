@@ -35,6 +35,8 @@ public class Sniff : MonoBehaviour
 
     private DogActions _dogActions;
 
+    public bool IsSniffing => isSniffing;
+
     // Start is called before the first frame update
     void Start() {
         _dogActions = new DogActions();

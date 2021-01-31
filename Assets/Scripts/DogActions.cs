@@ -35,14 +35,6 @@ public class @DogActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Fire"",
-                    ""type"": ""Value"",
-                    ""id"": ""ada9913f-4d0f-4c36-96aa-f665f575532b"",
-                    ""expectedControlType"": ""Integer"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Sniff"",
                     ""type"": ""Button"",
                     ""id"": ""741ca16e-b937-4628-a122-a7ca3eb3e599"",
@@ -62,6 +54,14 @@ public class @DogActions : IInputActionCollection, IDisposable
                     ""name"": ""Pawse"",
                     ""type"": ""Button"",
                     ""id"": ""1dd3381d-2795-4dc5-8904-4edf71d81d42"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""daea1118-5041-4804-8e2c-1e8e7e8b992d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -235,61 +235,6 @@ public class @DogActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""886e731e-7071-4ae4-95c0-e61739dad6fd"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Touch"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ee3d0cd2-254e-47a7-a8cb-bc94d9658c54"",
-                    ""path"": ""<Joystick>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8255d333-5683-4943-a58a-ccb207ff1dce"",
-                    ""path"": ""<XRController>/{PrimaryAction}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""9cce79ba-b9cf-49da-9c0b-7cea7728e43e"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
@@ -340,6 +285,17 @@ public class @DogActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pawse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fe123211-bc1e-4781-aa36-2f58f2d3a96b"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -919,10 +875,10 @@ public class @DogActions : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_Sniff = m_Player.FindAction("Sniff", throwIfNotFound: true);
         m_Player_Dig = m_Player.FindAction("Dig", throwIfNotFound: true);
         m_Player_Pawse = m_Player.FindAction("Pawse", throwIfNotFound: true);
+        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -986,20 +942,20 @@ public class @DogActions : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_Sniff;
     private readonly InputAction m_Player_Dig;
     private readonly InputAction m_Player_Pawse;
+    private readonly InputAction m_Player_Jump;
     public struct PlayerActions
     {
         private @DogActions m_Wrapper;
         public PlayerActions(@DogActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
-        public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @Sniff => m_Wrapper.m_Player_Sniff;
         public InputAction @Dig => m_Wrapper.m_Player_Dig;
         public InputAction @Pawse => m_Wrapper.m_Player_Pawse;
+        public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1015,9 +971,6 @@ public class @DogActions : IInputActionCollection, IDisposable
                 @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Sniff.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSniff;
                 @Sniff.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSniff;
                 @Sniff.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSniff;
@@ -1027,6 +980,9 @@ public class @DogActions : IInputActionCollection, IDisposable
                 @Pawse.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPawse;
                 @Pawse.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPawse;
                 @Pawse.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPawse;
+                @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1037,9 +993,6 @@ public class @DogActions : IInputActionCollection, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @Fire.started += instance.OnFire;
-                @Fire.performed += instance.OnFire;
-                @Fire.canceled += instance.OnFire;
                 @Sniff.started += instance.OnSniff;
                 @Sniff.performed += instance.OnSniff;
                 @Sniff.canceled += instance.OnSniff;
@@ -1049,6 +1002,9 @@ public class @DogActions : IInputActionCollection, IDisposable
                 @Pawse.started += instance.OnPawse;
                 @Pawse.performed += instance.OnPawse;
                 @Pawse.canceled += instance.OnPawse;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
             }
         }
     }
@@ -1207,10 +1163,10 @@ public class @DogActions : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnFire(InputAction.CallbackContext context);
         void OnSniff(InputAction.CallbackContext context);
         void OnDig(InputAction.CallbackContext context);
         void OnPawse(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
