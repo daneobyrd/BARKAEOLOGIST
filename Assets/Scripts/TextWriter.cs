@@ -76,20 +76,20 @@ public class TextWriter : MonoBehaviour
 
         skullAnimator.SetTrigger("SkullTalk");
         boxAnimator.SetTrigger("DialogueStart");
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSeconds(1f);
 
         foreach (char c in toWrite)
         {
             text.text += c;
-            yield return new WaitForSecondsRealtime(secPerLetter);
+            yield return new WaitForSeconds(secPerLetter);
         }
 
         //StartCoroutine(FadeGUI(false, 2f, toWrite.Length * .05f));
-        yield return new WaitForSecondsRealtime(secPerLetter * endDelayFactor + Random.Range(0, jitter));
+        yield return new WaitForSeconds(secPerLetter * endDelayFactor + Random.Range(0, jitter));
         skullAnimator.SetTrigger("SkullTalk");
         boxAnimator.SetTrigger("DialogueDone");
 
-        yield return new WaitForSecondsRealtime(.8f);
+        yield return new WaitForSeconds(.8f);
         text.text = "";
 
         mutex = false;

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 97304589331213177}
   - component: {fileID: 97304589331213182}
   - component: {fileID: 97304589331213183}
+  - component: {fileID: 1429859666}
+  - component: {fileID: 1429859667}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -102,6 +104,46 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1429859666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97304589331213180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3535e2a60179149ad93e5f3e78bb8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  writer: {fileID: 1429859667}
+  minInterval: 5
+  maxInterval: 10
+  normalHints:
+  - Hey furball, you got a nose?
+  - Have you tried sniffing yet?
+  - What do you mean you can't see anything? Try smelling!
+  missedItemHints:
+  - 
+  - 
+--- !u!114 &1429859667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97304589331213180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85117c45d1e1c764fb66767bca1cd6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 6131155475584750316}
+  boxAnimator: {fileID: 2317807653377733971}
+  skullAnimator: {fileID: 7421172932954650360}
+  secPerLetter: 0.06
+  endDelayFactor: 12
+  jitter: 0.477
 --- !u!1001 &97304589522145584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232,6 +274,24 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 97304589522145584}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2317807653377733971 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2410327150939432035, guid: 2d1dc2e2e954b4db2aa2a2d86cd97a3a,
+    type: 3}
+  m_PrefabInstance: {fileID: 97304589522145584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6131155475584750316 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6075232105855452124, guid: 2d1dc2e2e954b4db2aa2a2d86cd97a3a,
+    type: 3}
+  m_PrefabInstance: {fileID: 97304589522145584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &97304590738678112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -354,6 +414,12 @@ PrefabInstance:
 --- !u!224 &3761979635141256986 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3849608503260300922, guid: 78657afe7673a4c90a5db9921790d1dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 97304590738678112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7421172932954650360 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7468374959400621976, guid: 78657afe7673a4c90a5db9921790d1dc,
     type: 3}
   m_PrefabInstance: {fileID: 97304590738678112}
   m_PrefabAsset: {fileID: 0}
@@ -657,7 +723,7 @@ PrefabInstance:
     - target: {fileID: 7048895675672487580, guid: bf7f01aa67b844141a458c3c46645c21,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 177
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 7048895675672487580, guid: bf7f01aa67b844141a458c3c46645c21,
         type: 3}
