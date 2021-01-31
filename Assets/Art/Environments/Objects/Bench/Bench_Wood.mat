@@ -81,9 +81,9 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineDepthNormalSensitivity: 3.01
     - _OutlineDepthNormalThresholdScale: 8
-    - _OutlineDepthSensitivity: 0.925
+    - _OutlineDepthSensitivity: 1
     - _OutlineNormalsSensitivity: 1
-    - _OutlineThickness: 3
+    - _OutlineThickness: 5.92
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.629
