@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Foliage_Brown
-  m_Shader: {fileID: -6465566751694194690, guid: 5331613bc34fe8c4594c041890d1672b,
+  m_Shader: {fileID: -6465566751694194690, guid: 8dc125f04e1b6d84f9e9c438a2a17d8b,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -112,7 +112,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _KnownColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 0.31399626, g: 0.1384342, b: 0.061247297, a: 1}
     - _MainTint: {r: 1, g: 1, b: 1, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SightColor: {r: 1, g: 1, b: 1, a: 1}

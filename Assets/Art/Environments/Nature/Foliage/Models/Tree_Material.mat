@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Tree_Material
-  m_Shader: {fileID: -6465566751694194690, guid: 8dc125f04e1b6d84f9e9c438a2a17d8b,
+  m_Shader: {fileID: -6465566751694194690, guid: 5331613bc34fe8c4594c041890d1672b,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -64,9 +64,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ToonShading_73BC9C45_Texture2DF3F3E642_2706298302:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - CLIP: 0
     - LIGHTMAP: 0
+    - Vector1_7A969595: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -77,6 +82,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _MainTint_VariationIntensity: 1.47
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _OutlineDepthNormalSensitivity: 0
@@ -91,6 +97,10 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _Wind_Density: 0
+    - _Wind_Direction: 0
+    - _Wind_Speed: 0
+    - _Wind_Strength: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -99,6 +109,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _KnownColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _MainColor: {r: 1, g: 1, b: 1, a: 0}
+    - _MainTint: {r: 0.8177339, g: 1, b: 0.3584906, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SightColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
