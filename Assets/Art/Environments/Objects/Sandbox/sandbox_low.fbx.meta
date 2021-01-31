@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: base_material
+    second: {fileID: 2100000, guid: d963fbffd35c3f54b92d1cbd5a876bd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: bolts
     second: {fileID: 2100000, guid: d963fbffd35c3f54b92d1cbd5a876bd1, type: 2}
   - first:

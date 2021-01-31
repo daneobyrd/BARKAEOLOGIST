@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     private int bonesFound = 0;
 
-    public Canvas winScreen;
+    public Transform winScreen;
 
     public GameUIManager uIManager;
 
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
             bonesFound++;
             uIManager.ToggleBone(bonesFound - 1);
         }
-        
+
         if (bonesFound >= bones)
         {
             //you win?

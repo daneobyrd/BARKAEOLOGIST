@@ -146,7 +146,7 @@ Material:
     - _DEBUG_VERTEX_COLOR: 0
     - _FourthTextureScale: 0.2
     - _MainTextureScale: 0.2
-    - _NoiseScale: 0.002
+    - _NoiseScale: 0.2
     - _SecondTex_Smoothness: 0.5
     - _SecondTex_smoothness: 0
     - _SecondTextureScale: 0.2
