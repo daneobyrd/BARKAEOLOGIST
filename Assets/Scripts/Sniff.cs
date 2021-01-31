@@ -15,7 +15,7 @@ public class Sniff : MonoBehaviour
     UnityEngine.Rendering.Volume volume;
 
     [SerializeField]
-    float digRange = .3f;
+    float digRange = .5f;
 
     [Tooltip("The actual player model")]
     [SerializeField]
@@ -144,7 +144,6 @@ public class Sniff : MonoBehaviour
         GameObject particles = Instantiate(digParticles, player.position, Quaternion.identity);
         Destroy(particles, 4.0f);
 
-        Debug.Log(player.position);
         foreach(Collider c in hits)
         {
             TrailEnd end = c.GetComponent<TrailEnd>();

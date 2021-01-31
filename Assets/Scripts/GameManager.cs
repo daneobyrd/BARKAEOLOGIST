@@ -7,6 +7,11 @@ public class GameManager : MonoBehaviour
     [Tooltip("Number of bones that must be found")]
     [SerializeField]
     int bones;
+
+    [Tooltip("Refrence to dialogue box")]
+    [SerializeField]
+    TextWriter writer;
+
     private int bonesFound = 0;
 
     public Canvas winScreen;
@@ -30,11 +35,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void findBone()
+    public void findObject(bool isBone, string msg)
     {
-        bonesFound++;
-        Debug.Log("Found a bone! Total: " + bonesFound);
-
+        writer.addTextToQueue(msg);
+        if (isBone)
+          bonesFound++;
+        
         if (bonesFound >= bones)
         {
             //you win?
