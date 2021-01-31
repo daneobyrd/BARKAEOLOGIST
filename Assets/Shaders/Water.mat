@@ -49,9 +49,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Foam_Amount: 6.51
+    - Foam_Amount: 7.73
     - Foam_Cutoff: 3.5
-    - Foam_Evolution_Speed: 1.25
+    - Foam_Evolution_Speed: 1.8
     - Foam_Scale: 5
     - Global_Fading: 30
     - Light_Probe_Contribution: 2.5
@@ -59,10 +59,10 @@ Material:
     - Refraction_Evolution_Speed: 1.5
     - Refraction_Height: 0.2
     - Vector1_77A997E: 0.5
-    - Water_Depth: 0.77
+    - Water_Depth: 4.56
     - Wave_Height: 0.25
     - Wave_Scale: 10
-    - Wave_Speed: 2
+    - Wave_Speed: 0.83
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
