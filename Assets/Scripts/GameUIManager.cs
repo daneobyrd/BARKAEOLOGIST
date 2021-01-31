@@ -19,6 +19,7 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     public Slider musicSlider;
     public Slider sfxSlider;
     public Slider ambienceSlider;
+    public Slider masterSlider;
 
     // Miki's Edit
 
@@ -85,6 +86,11 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
 
 
     // Setting up sliders for audio
+
+    public void SetMasterVolume()
+    {
+        audioMixer.SetFloat("MasterExpo", Mathf.Log(masterSlider.value) * 20);
+    }
 
 
     public void SetMusicVolume ()
