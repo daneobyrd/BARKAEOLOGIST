@@ -15,11 +15,11 @@ MonoBehaviour:
   m_Active: 1
   settings:
     Event: 1000
-    blitMaterial: {fileID: 2100000, guid: dceccd3f91108f641830fe608bbe239b, type: 2}
+    blitMaterial: {fileID: 2100000, guid: 98eecd4998831024ca35434806543e70, type: 2}
     blitMaterialPassIndex: 0
     setInverseViewMatrix: 0
-    srcType: 1
-    srcTextureId: _AfterPostProcessTexture
+    srcType: 0
+    srcTextureId: 
     srcTextureObject: {fileID: 8400000, guid: 34085cd2a9c5c854e8a48506b2558087, type: 2}
     dstType: 1
     dstTextureId: _FogOfWar2
