@@ -22,6 +22,14 @@ public class DogMovementController : MonoBehaviour {
     [SerializeField] private AudioSource sniffingSource;
     [SerializeField] private AudioSource pantingSource;
     [SerializeField] private AudioSource footstepSource;
+    [SerializeField] private AudioList barkClips;
+    [SerializeField] private AudioList diggingClips;
+    [SerializeField] private AudioList sniffingClips;
+    [SerializeField] private AudioList pantingClips;
+
+    [SerializeField] private AudioTerrainMap footstepClips;
+    [SerializeField] private AudioTerrainMap jumpingClips;
+    [SerializeField] private AudioTerrainMap slowFootstepClips;
 
     private CharacterController _characterController;
     private DogActions _actions;
@@ -29,6 +37,8 @@ public class DogMovementController : MonoBehaviour {
     private Vector3 _lastMoveDirection;
     private float _idleCountdown;
     private bool _panted = true;
+    private bool _sniffed = false;
+    private TerrainColor _lastTerrainColor = TerrainColor.Black;
 
     private static readonly int WalkSpeed = Animator.StringToHash("WalkSpeed");
     private static readonly int Sniffing = Animator.StringToHash("Sniffing");
@@ -56,16 +66,20 @@ public class DogMovementController : MonoBehaviour {
     private void OnDig(InputAction.CallbackContext obj) {
         if (sniffer.CanDig) {
             animator.SetTrigger(Dig);
+            diggingSource.clip = diggingClips.GetRandomClip();
             diggingSource.Play();
         }
     }
 
     private void OnJump(InputAction.CallbackContext obj) {
         animator.SetTrigger(Jump);
+        var terrainColor = GetUnderlyingTerrainColor();
+        jumpingSource.clip = jumpingClips.GetMatchingClip(terrainColor);
         jumpingSource.Play();
     }
 
     private void OnBark(InputAction.CallbackContext obj) {
+        barkSource.clip = barkClips.GetRandomClip();
         barkSource.Play();
     }
 
@@ -116,18 +130,37 @@ public class DogMovementController : MonoBehaviour {
         if (!_panted) {
             _idleCountdown -= Time.deltaTime;
             if (_idleCountdown <= 0f) {
+                pantingSource.clip = pantingClips.GetRandomClip();
                 pantingSource.Play();
                 _panted = true;
             }
         }
 
+        if (isSniffing) {
+            if (!_sniffed) {
+                sniffingSource.clip = sniffingClips.GetRandomClip();
+                sniffingSource.Play();
+                _sniffed = true;
+            }
+        }
+        else {
+            _sniffed = false;
+        }
 
         if (walkSpeed > 0.01f) {
             _idleCountdown = pantIdleCountdownTime;
             _panted = false;
 
-            if (!footstepSource.isPlaying) {
+            var terrainColor = GetUnderlyingTerrainColor();
+            if (!footstepSource.isPlaying || terrainColor != _lastTerrainColor) {
+                if (isSniffing) {
+                    footstepSource.clip = slowFootstepClips.GetMatchingClip(terrainColor);
+                }
+                else {
+                    footstepSource.clip = footstepClips.GetMatchingClip(terrainColor);
+                }
                 footstepSource.Play();
+                _lastTerrainColor = terrainColor;
             }
         }
         else {
@@ -138,6 +171,7 @@ public class DogMovementController : MonoBehaviour {
 
         if (isSniffing) {
             if (!sniffingSource.isPlaying) {
+                sniffingSource.clip = sniffingClips.GetRandomClip();
                 sniffingSource.Play();
             }
         }
@@ -146,5 +180,34 @@ public class DogMovementController : MonoBehaviour {
                 sniffingSource.Stop();
             }
         }
+    }
+
+    private TerrainColor GetUnderlyingTerrainColor() {
+        Ray ray = new Ray(transform.position, Vector3.down);
+        if (!Physics.Raycast(ray, out RaycastHit hit)) {
+            return TerrainColor.Black;
+        }
+
+        MeshCollider meshCollider = hit.collider as MeshCollider;
+        if (!meshCollider || !meshCollider.sharedMesh) {
+            return TerrainColor.Black;
+        }
+
+        Mesh mesh = meshCollider.sharedMesh;
+        Color[] colors = mesh.colors;
+        int[] triangles = mesh.triangles;
+
+        // Extract local space normals of the triangle we hit
+        Color c0 = colors[triangles[hit.triangleIndex * 3 + 0]];
+        Color c1 = colors[triangles[hit.triangleIndex * 3 + 1]];
+        Color c2 = colors[triangles[hit.triangleIndex * 3 + 2]];
+
+        // interpolate using the barycentric coordinate of the hitpoint
+        Vector3 baryCenter = hit.barycentricCoordinate;
+
+        // Use barycentric coordinate to interpolate normal
+        Color interpolatedColor = c0 * baryCenter.x + c1 * baryCenter.y + c2 * baryCenter.z;
+
+        return AudioTerrainMap.GetTerrainColor(interpolatedColor);
     }
 }
