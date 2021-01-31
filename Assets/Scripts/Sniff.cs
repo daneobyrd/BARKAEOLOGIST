@@ -95,7 +95,7 @@ public class Sniff : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Smellable"))
         {
             withinRange.Remove(other);
-            //setSniffableState(other, false);
+            setSniffableState(other, false);
         }
     }
 
