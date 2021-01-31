@@ -121,8 +121,8 @@ MonoBehaviour:
   maxInterval: 10
   normalHints:
   - Hey furball, you got a nose?
-  - Have you tried sniffing yet?
-  - What do you mean you can't see anything? Try smelling!
+  - You canines have good noses, right?
+  - You could try giving smelling around a go...
   missedItemHints:
   - 
   - 
@@ -635,6 +635,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 97304589331213176}
     m_Modifications:
+    - target: {fileID: 3652497223648616301, guid: bf7f01aa67b844141a458c3c46645c21,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652497223650061829, guid: bf7f01aa67b844141a458c3c46645c21,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652497223860024048, guid: bf7f01aa67b844141a458c3c46645c21,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652497224535658658, guid: bf7f01aa67b844141a458c3c46645c21,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652497225541748437, guid: bf7f01aa67b844141a458c3c46645c21,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7048895675672487579, guid: bf7f01aa67b844141a458c3c46645c21,
         type: 3}
       propertyPath: m_Name

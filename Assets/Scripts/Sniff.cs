@@ -72,6 +72,7 @@ public class Sniff : MonoBehaviour
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Scents"))
         {
+            //Found last trail element, reveal object location
             TrailPenultimate tp = other.gameObject.GetComponent<TrailPenultimate>();
             if (tp != null)
             {
@@ -79,7 +80,6 @@ public class Sniff : MonoBehaviour
                 return;
             }
         }
-
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Smellable") && !withinRange.Contains(other))
         {
@@ -95,7 +95,7 @@ public class Sniff : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Smellable"))
         {
             withinRange.Remove(other);
-            setSniffableState(other, false);
+            //setSniffableState(other, false);
         }
     }
 

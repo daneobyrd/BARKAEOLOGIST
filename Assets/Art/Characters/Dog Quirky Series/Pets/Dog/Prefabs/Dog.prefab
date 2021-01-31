@@ -420,6 +420,41 @@ MonoBehaviour:
   sniffingSource: {fileID: 8660727359046924555}
   pantingSource: {fileID: 992553153}
   footstepSource: {fileID: 1196009143}
+  barkClips:
+    clips: []
+  diggingClips:
+    clips: []
+  sniffingClips:
+    clips: []
+  pantingClips:
+    clips: []
+  footstepClips:
+    blackTerrainList:
+      clips: []
+    redTerrainList:
+      clips: []
+    greenTerrainList:
+      clips: []
+    blueTerrainList:
+      clips: []
+  jumpingClips:
+    blackTerrainList:
+      clips: []
+    redTerrainList:
+      clips: []
+    greenTerrainList:
+      clips: []
+    blueTerrainList:
+      clips: []
+  slowFootstepClips:
+    blackTerrainList:
+      clips: []
+    redTerrainList:
+      clips: []
+    greenTerrainList:
+      clips: []
+    blueTerrainList:
+      clips: []
 --- !u!114 &344651868102961183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: {fileID: 0}
-  digRange: 1
+  digRange: 2
   player: {fileID: 821687041}
   digParticles: {fileID: 2263309596753598329, guid: 182563dc399c4014ab8dc7821e085f4b,
     type: 3}
@@ -511,7 +546,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1205772881026009240, guid: ec0261a489a7d4dc0a40cabd422ff49b,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 48763e1fa810741b38a6b2d665aefb6e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1056,6 +1091,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4b78e55d045ae374a98080201ddbf8ea,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4b78e55d045ae374a98080201ddbf8ea,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 4b78e55d045ae374a98080201ddbf8ea,

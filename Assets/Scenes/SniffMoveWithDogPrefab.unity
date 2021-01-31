@@ -34063,6 +34063,11 @@ PrefabInstance:
       propertyPath: volume
       value: 
       objectReference: {fileID: 1413548054}
+    - target: {fileID: 1371881195873063480, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3811808085473119979, guid: 4b25d9f8cc0bfb54793da6690755b9d9,
         type: 3}
       propertyPath: m_audioClip
