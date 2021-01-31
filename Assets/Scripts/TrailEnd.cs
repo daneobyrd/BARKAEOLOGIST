@@ -15,6 +15,12 @@ public class TrailEnd : MonoBehaviour
     [Tooltip("Source of this scent trail")]
     public Sniffable source;
 
+    public bool displayStars;
+
+    public GameObject starParticles;
+
+    public string message;
+
     private bool found = false;
 
     // Start is called before the first frame update
@@ -29,10 +35,22 @@ public class TrailEnd : MonoBehaviour
         if (found)
             return;
 
+        if(displayStars)
+        {
+            StartCoroutine(digDelay());
+        }
+
         found = true;
-        GameManager.instance().findBone();
-        item.SetActive(true);
         particles.SetActive(false);
         source.find();
+    }
+
+    IEnumerator digDelay()
+    {
+        yield return new WaitForSeconds(1.5f);
+        item.SetActive(true);
+        GameManager.instance().findObject(displayStars, message);
+        GameObject particles = Instantiate(starParticles, item.transform.position, Quaternion.identity);
+        Destroy(particles, 8f);
     }
 }

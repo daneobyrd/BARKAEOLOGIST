@@ -76,11 +76,9 @@ public class TextWriter : MonoBehaviour
 
         boxAnimator.SetTrigger("DialogueStart");
         yield return new WaitForSecondsRealtime(1f);
-        Debug.Log("Animation In");
 
         foreach (char c in toWrite)
         {
-            Debug.Log("Printing letter");
             text.text += c;
             yield return new WaitForSecondsRealtime(secPerLetter);
         }
@@ -88,7 +86,6 @@ public class TextWriter : MonoBehaviour
         //StartCoroutine(FadeGUI(false, 2f, toWrite.Length * .05f));
         yield return new WaitForSecondsRealtime(secPerLetter * endDelayFactor + Random.Range(0, jitter));
         boxAnimator.SetTrigger("DialogueDone");
-        Debug.Log("Animation Out");
 
         yield return new WaitForSecondsRealtime(.8f);
         text.text = "";
