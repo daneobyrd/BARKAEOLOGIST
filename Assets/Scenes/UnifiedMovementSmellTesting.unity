@@ -559,7 +559,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153158899}
-  m_LocalRotation: {x: 0.105368145, y: -0.0000000042776493, z: 4.5325105e-10, w: 0.9944333}
+  m_LocalRotation: {x: 0.105368145, y: 0.00000000427765, z: -4.5325108e-10, w: 0.9944333}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -900,7 +900,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -807, y: 400}
-  m_SizeDelta: {x: 133.53204, y: 146.49564}
+  m_SizeDelta: {x: 90, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &445428427
 Animator:
@@ -912,7 +912,7 @@ Animator:
   m_GameObject: {fileID: 445428425}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: deed507484bbf47f08b7402d1f960e40, type: 2}
+  m_Controller: {fileID: 9100000, guid: cce39e25a38e94eabbda95c604b53832, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6744,11 +6744,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 31717861}
-  bg: {fileID: 0}
   boxAnimator: {fileID: 1908464638}
+  skullAnimator: {fileID: 445428427}
   secPerLetter: 0.08
   endDelayFactor: 12
-  jitter: 1
+  jitter: 0.861
 --- !u!224 &946774009
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7084,7 +7084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: {fileID: 1413548054}
-  digRange: 1
+  digRange: 1.5
   player: {fileID: 821687041}
   digParticles: {fileID: 2263309596753598329, guid: 182563dc399c4014ab8dc7821e085f4b,
     type: 3}
@@ -12952,7 +12952,7 @@ PrefabInstance:
     - target: {fileID: 968882895623940415, guid: 2d1dc2e2e954b4db2aa2a2d86cd97a3a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 552
+      value: 444
       objectReference: {fileID: 0}
     - target: {fileID: 968882895623940415, guid: 2d1dc2e2e954b4db2aa2a2d86cd97a3a,
         type: 3}

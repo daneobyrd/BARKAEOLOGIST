@@ -11,10 +11,10 @@ public class TextWriter : MonoBehaviour
     private TextMeshProUGUI text;
 
     [SerializeField]
-    private CanvasGroup bg;
+    private Animator boxAnimator;
 
     [SerializeField]
-    private Animator boxAnimator;
+    private Animator skullAnimator;
 
 
     [Tooltip("Time between each letter being printed")]
@@ -74,6 +74,7 @@ public class TextWriter : MonoBehaviour
 
         mutex = true;
 
+        skullAnimator.SetTrigger("SkullTalk");
         boxAnimator.SetTrigger("DialogueStart");
         yield return new WaitForSecondsRealtime(1f);
 
@@ -85,6 +86,7 @@ public class TextWriter : MonoBehaviour
 
         //StartCoroutine(FadeGUI(false, 2f, toWrite.Length * .05f));
         yield return new WaitForSecondsRealtime(secPerLetter * endDelayFactor + Random.Range(0, jitter));
+        skullAnimator.SetTrigger("SkullTalk");
         boxAnimator.SetTrigger("DialogueDone");
 
         yield return new WaitForSecondsRealtime(.8f);
@@ -107,7 +109,7 @@ public class TextWriter : MonoBehaviour
         {
             currAlpha += step;
             Mathf.Clamp(currAlpha, 1f, 0f);
-            bg.alpha = currAlpha;
+            //bg.alpha = currAlpha;
             yield return new WaitForSecondsRealtime(delay);
         }
     }

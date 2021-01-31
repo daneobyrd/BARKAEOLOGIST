@@ -49,8 +49,13 @@ public class TrailEnd : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         item.SetActive(true);
-        GameManager.instance().findObject(displayStars, message);
-        GameObject particles = Instantiate(starParticles, item.transform.position, Quaternion.identity);
-        Destroy(particles, 8f);
+        GameManager.instance().foundObject(displayStars, message);
+
+        if (displayStars)
+        {
+            GameObject particles = Instantiate(starParticles, item.transform.position, Quaternion.identity);
+            Destroy(particles, 8f);
+        }
+     
     }
 }
