@@ -21,6 +21,9 @@ public class TrailEnd : MonoBehaviour
 
     public string message;
 
+    [Tooltip("Audio source to play when this item is found")]
+    public AudioSource foundSource;
+
     private bool found = false;
 
     // Start is called before the first frame update
@@ -43,6 +46,10 @@ public class TrailEnd : MonoBehaviour
         found = true;
         particles.SetActive(false);
         source.find();
+
+        if (foundSource) {
+            foundSource.Play();
+        }
     }
 
     IEnumerator digDelay()
@@ -56,6 +63,6 @@ public class TrailEnd : MonoBehaviour
             GameObject particles = Instantiate(starParticles, item.transform.position, Quaternion.identity);
             Destroy(particles, 8f);
         }
-     
+
     }
 }
