@@ -82,6 +82,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: 9f3ef9bda7f6e45d18fcd3fc03c638dc
     name: AmbiExpo
+  - guid: 614332be5fa584bfeafec7004ecfeca6
+    name: MasterExpo
   - guid: b0ae561e929bb49feb889282ca90f1d9
     name: MusicExpo
   - guid: de2e5945d179141f2a0c8c86908e091b
