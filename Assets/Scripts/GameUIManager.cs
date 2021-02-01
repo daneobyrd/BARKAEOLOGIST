@@ -72,11 +72,11 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         Application.Quit();
     }
 
-    public void PanelOpenClose()
-    {
+    //public void PanelOpenClose()
+    //{
         
-        StartCoroutine(ClosePanel());
-    }
+    //    StartCoroutine(ClosePanel());
+    //}
 
     [ContextMenu("Force win")]
     public void WinGame() {
@@ -109,19 +109,19 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     public void OnBark(InputAction.CallbackContext context) { }
 
     IEnumerator ClosePawse() {
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSecondsRealtime(0.3f);
         Time.timeScale = 1;
         pawseMenu.SetActive(false);
         // For Audio Mixer to switch snapshot - Miki
         unpaused.TransitionTo(0.5f);
     }
 
-    IEnumerator ClosePanel()
-    {
-        pawseMenu.GetComponent<Animator>().SetTrigger("CloseMenu");
-        yield return new WaitForSecondsRealtime(0.3f);
-        gameObject.SetActive(false);
-    }
+    //IEnumerator ClosePanel()
+    //{
+    //    pawseMenu.GetComponent<Animator>().SetTrigger("CloseMenu");
+    //    yield return new WaitForSecondsRealtime(0.3f);
+    //    gameObject.SetActive(false);
+    //}
 
 
     // Setting up sliders for audio
