@@ -24,7 +24,7 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
 
     // Miki's Edit
 
-    //Olivia's edit for BoneToggles and winscreen
+    //Olivia's edit for BoneToggles and winscreen and buttons
     public GameObject skeletonPanel;
 
     [SerializeField] public List<Toggle> boneToggles;
@@ -33,7 +33,7 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
 
     [SerializeField] public Button winButton;
 
-    //Olivia's edit for BoneToggles and winscreen
+    //Olivia's edit for BoneToggles and winscreen and buttons
 
     [SerializeField] private GameObject pawseMenu;
     [SerializeField] private GameObject winMenu;
@@ -72,6 +72,12 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         Application.Quit();
     }
 
+    public void PanelOpenClose()
+    {
+        
+        StartCoroutine(ClosePanel());
+    }
+
     [ContextMenu("Force win")]
     public void WinGame() {
         winMenu.SetActive(true);
@@ -108,6 +114,13 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         pawseMenu.SetActive(false);
         // For Audio Mixer to switch snapshot - Miki
         unpaused.TransitionTo(0.5f);
+    }
+
+    IEnumerator ClosePanel()
+    {
+        pawseMenu.GetComponent<Animator>().SetTrigger("CloseMenu");
+        yield return new WaitForSecondsRealtime(0.3f);
+        gameObject.SetActive(false);
     }
 
 
@@ -149,4 +162,5 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
         yield return new WaitForSecondsRealtime(1f);
         skeletonPanel.GetComponent<Animator>().SetBool("Show", false);
     }
+
 }
