@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: AdditiveBlit
-  m_Shader: {fileID: -6465566751694194690, guid: 7d3335f2f73e6ae4b970fa33e53a47e6,
+  m_Shader: {fileID: -6465566751694194690, guid: 2e7f8fb4ca8090649a8d0164b759d01b,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4

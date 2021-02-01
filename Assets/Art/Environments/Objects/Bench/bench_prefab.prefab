@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4976825114400152128}
   m_Layer: 0
-  m_Name: bench_low
+  m_Name: bench_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

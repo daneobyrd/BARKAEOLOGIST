@@ -23,7 +23,8 @@ Material:
   m_Name: DarkGrass
   m_Shader: {fileID: -6465566751694194690, guid: c54c3b6230765a9439363e1c3bb0a526,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+    _ADDITIONAL_LIGHT_SHADOWS
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -114,6 +115,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ToonShading_7AAC74A5_Texture2DF3F3E642_2706298302:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ToonShading_B0FB878A_Texture2D75C45C06_1004932281:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ToonShading_B0FB878A_Texture2DF3F3E642_2706298302:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}

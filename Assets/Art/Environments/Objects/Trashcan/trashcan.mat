@@ -23,7 +23,8 @@ Material:
   m_Name: trashcan
   m_Shader: {fileID: -6465566751694194690, guid: 8dc125f04e1b6d84f9e9c438a2a17d8b,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+    _ADDITIONAL_LIGHT_SHADOWS
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -61,6 +62,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -80,6 +85,7 @@ Material:
     m_Floats:
     - CLIP: 0
     - LIGHTMAP: 0
+    - Vector1_7A969595: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -91,6 +97,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _NormalMult: 0
     - _OcclusionStrength: 1
     - _OutlineDepthNormalSensitivity: 0
     - _OutlineDepthNormalThresholdScale: 0
