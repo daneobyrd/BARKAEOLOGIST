@@ -45,10 +45,15 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     }
 
     public void Unpawse() {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         StartCoroutine(ClosePawse());
     }
 
     public void Pawse() {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         pawseMenu.SetActive(true);
         Time.timeScale = 0;
         // For Audio Mixer to switch Snapshot - Miki
@@ -64,6 +69,8 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
 
     public void StartGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         SceneManager.LoadScene(1);
     }
 
@@ -74,7 +81,7 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
 
     //public void PanelOpenClose()
     //{
-        
+
     //    StartCoroutine(ClosePanel());
     //}
 

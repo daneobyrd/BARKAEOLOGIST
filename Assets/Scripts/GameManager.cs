@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
         if (bonesFound >= bones)
         {
             //you win?
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             winScreen.gameObject.SetActive(true);
             uIManager.winButton.Select();
             Time.timeScale = 0;
