@@ -724,7 +724,7 @@ PrefabInstance:
     - target: {fileID: 5848358794783228257, guid: 6efd4220d6de9451d8aa9c7cb7453296,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5848358794783228271, guid: 6efd4220d6de9451d8aa9c7cb7453296,
         type: 3}
@@ -751,10 +751,21 @@ PrefabInstance:
       propertyPath: m_characterSpacing
       value: -4.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5848358795686492571, guid: 6efd4220d6de9451d8aa9c7cb7453296,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4767fbca8c239431982bdd049e7334b7,
+        type: 3}
+    - target: {fileID: 5848358795686492572, guid: 6efd4220d6de9451d8aa9c7cb7453296,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 222
+      objectReference: {fileID: 0}
     - target: {fileID: 5848358795686492573, guid: 6efd4220d6de9451d8aa9c7cb7453296,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5848358796381110951, guid: 6efd4220d6de9451d8aa9c7cb7453296,
         type: 3}
