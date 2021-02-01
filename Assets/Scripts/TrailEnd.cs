@@ -23,6 +23,9 @@ public class TrailEnd : MonoBehaviour
 
     private bool found = false;
 
+    [Tooltip("Drag your AudioSource here")]
+    public AudioSource itemFoundSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +65,8 @@ public class TrailEnd : MonoBehaviour
             Debug.Log("Displaying stars");
             GameObject particles = Instantiate(starParticles, item.transform.position, Quaternion.identity);
             Destroy(particles, 8f);
+            //code to play the SFX here
+            itemFoundSFX.Play();
         }
 
     }

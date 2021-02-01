@@ -72,7 +72,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1205772881026009240, guid: ec0261a489a7d4dc0a40cabd422ff49b,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2ffe27cade7284eedba78dd74031996c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -200,7 +200,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1205772881026009240, guid: ec0261a489a7d4dc0a40cabd422ff49b,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eabeda3e9dc1843b8a17b0ca65900f6a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -569,7 +569,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1205772881026009240, guid: ec0261a489a7d4dc0a40cabd422ff49b,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 48763e1fa810741b38a6b2d665aefb6e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6ae74cddadf734067a4e85906c4593bd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -697,7 +697,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1205772881026009240, guid: ec0261a489a7d4dc0a40cabd422ff49b,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8ad8b9126e73e4c999d712e2b9eacbd9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -825,7 +825,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1205772881026009240, guid: ec0261a489a7d4dc0a40cabd422ff49b,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5f576da339edc417f93af614a7b82e0d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -983,7 +983,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1205772881026009240, guid: ec0261a489a7d4dc0a40cabd422ff49b,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4fcb419e5f0054c879af824a3d85c441, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1254,15 +1254,15 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d17c587adc2d44f9081c082cd028ce, type: 3}
---- !u!4 &234972718624568176 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00d17c587adc2d44f9081c082cd028ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 344651867663045787}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &579023566993238474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00d17c587adc2d44f9081c082cd028ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 344651867663045787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &234972718624568176 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00d17c587adc2d44f9081c082cd028ce,
     type: 3}
   m_PrefabInstance: {fileID: 344651867663045787}
   m_PrefabAsset: {fileID: 0}

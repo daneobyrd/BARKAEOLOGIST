@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.HID;
@@ -75,7 +76,8 @@ public class DogMovementController : MonoBehaviour {
         animator.SetTrigger(Jump);
         var terrainColor = GetUnderlyingTerrainColor();
         jumpingSource.clip = jumpingClips.GetMatchingClip(terrainColor);
-        jumpingSource.Play();
+        //jumpingSource.Play();
+        StartCoroutine(timeJumpSound());
     }
 
     private void OnBark(InputAction.CallbackContext obj) {
@@ -212,5 +214,11 @@ public class DogMovementController : MonoBehaviour {
         Color interpolatedColor = c0 * baryCenter.x + c1 * baryCenter.y + c2 * baryCenter.z;
 
         return AudioTerrainMap.GetTerrainColor(interpolatedColor);
+    }
+
+    IEnumerator timeJumpSound()
+    {
+        yield return new WaitForSecondsRealtime(0.3f);
+        jumpingSource.Play();
     }
 }
