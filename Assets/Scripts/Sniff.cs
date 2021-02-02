@@ -107,7 +107,7 @@ public class Sniff : MonoBehaviour
         if (isSniffing)
         {
             mainCam.cullingMask |= 1 << LayerMask.NameToLayer("Scents");
-            mainCam.cullingMask &= ~(1 << LayerMask.NameToLayer("ScentPreviews"));
+            mainCam.cullingMask &= ~(1 << LayerMask.NameToLayer("Scent Previews"));
             foreach (Collider collider in withinRange)
             {
                 setSniffableState(collider, true);
@@ -116,7 +116,7 @@ public class Sniff : MonoBehaviour
         else
         {
             mainCam.cullingMask &= ~(1 << LayerMask.NameToLayer("Scents"));
-            mainCam.cullingMask |= 1 << LayerMask.NameToLayer("ScentPreviews");
+            mainCam.cullingMask |= 1 << LayerMask.NameToLayer("Scent Previews");
         }
     }
 

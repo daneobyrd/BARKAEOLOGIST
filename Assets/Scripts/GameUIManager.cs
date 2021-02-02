@@ -157,6 +157,7 @@ public class GameUIManager : MonoBehaviour, DogActions.IPlayerActions {
     //bone Toggle handling
     public void ToggleBone(int boneID)
     {
+        Debug.Log("Found bone ID: " + boneID);
         animatedBoneID = boneID;
         skeletonPanel.GetComponent<Animator>().SetBool("Show", true);
         StartCoroutine(animateBonePanel());

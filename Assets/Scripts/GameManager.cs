@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int bones;
 
+    [Tooltip("Time to let final dialogue play out")]
+    [SerializeField]
+    float winDelay = 8f;
+
     [Tooltip("Refrence to dialogue box")]
     [SerializeField]
     TextWriter writer;
@@ -48,12 +52,21 @@ public class GameManager : MonoBehaviour
 
         if (bonesFound >= bones)
         {
-            //you win?
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            winScreen.gameObject.SetActive(true);
-            uIManager.winButton.Select();
-            Time.timeScale = 0;
+            writer.addTextToQueue("I don't believe it, you found them all!");
+            StartCoroutine(winGame());
         }
+    }
+
+    IEnumerator winGame()
+    {
+        Debug.Log("Win!");
+        yield return new WaitForSecondsRealtime(winDelay);
+        
+        //you win?
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        winScreen.gameObject.SetActive(true);
+        uIManager.winButton.Select();
+        Time.timeScale = 0;
     }
 }
